@@ -1,72 +1,118 @@
-# Welcome to your Lovable project
+# 📚 Coaching Classes Portal  
 
-## Project info
+A modern, responsive Coaching/ Tuition Classes web portal built with **Next.js (or React/Vite)** and **Supabase** as backend.  
+This project provides student login, parent access, attendance tracking, fee management, and more.  
 
-**URL**: https://lovable.dev/projects/8f41e60f-018d-44cc-b477-d6b99ae40892
+---
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+- 🔐 **Authentication (Supabase Auth)**
+  - Email + OTP login
+  - Google / GitHub login
+  - Secure Row Level Policies
 
-**Use Lovable**
+- 👨‍🎓 **Student Dashboard**
+  - View profile
+  - Attendance records
+  - Exam results
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8f41e60f-018d-44cc-b477-d6b99ae40892) and start prompting.
+- 🧑‍🏫 **Admin/Teacher Dashboard**
+  - Add/update students
+  - Manage attendance
+  - Upload exam results
+  - Send notifications
 
-Changes made via Lovable will be committed automatically to this repo.
+- 💳 **Payments (Optional)**
+  - Online fee collection (Stripe/Razorpay integration)
 
-**Use your preferred IDE**
+- 📩 **Email Notifications**
+  - OTP login emails
+  - Class updates and reminders
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- ⚡ **Supabase Edge Functions**
+  - AI endpoints (future scope)
+  - Scheduled tasks (auto reminders)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🛠️ Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Frontend:** Next.js / React / Vite + TailwindCSS  
+- **Backend:** Supabase (PostgreSQL, Auth, Edge Functions)  
+- **Database:** Supabase PostgreSQL  
+- **Hosting:** Vercel / Netlify  
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📂 Project Setup
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/your-username/coaching-classes-portal.git
+cd coaching-classes-portal
+2️⃣ Install Dependencies
+bash
+Copy
+Edit
+npm install
+# or
+yarn install
+3️⃣ Configure Environment Variables
+Create a .env.local file in the root folder and add:
+
+env
+Copy
+Edit
+NEXT_PUBLIC_SUPABASE_URL=your-project-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+4️⃣ Run Development Server
+bash
+Copy
+Edit
 npm run dev
-```
+# or
+yarn dev
+App will be running at: http://localhost:3000
 
-**Edit a file directly in GitHub**
+🔐 Security Notes
+✅ OTP expiry set to 5 minutes (300 seconds) for better security
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+✅ Row Level Security (RLS) enabled for user-specific data
 
-**Use GitHub Codespaces**
+✅ Environment variables kept secret (.env.local not pushed to GitHub)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+📸 Screenshots
+(Add your app screenshots here → login page, dashboard, etc.)
 
-## What technologies are used for this project?
+📌 Roadmap
+ Authentication (Email OTP + Google login)
 
-This project is built with:
+ Student dashboard
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+ Admin panel
 
-## How can I deploy this project?
+ Fee payment integration
 
-Simply open [Lovable](https://lovable.dev/projects/8f41e60f-018d-44cc-b477-d6b99ae40892) and click on Share -> Publish.
+ AI-powered quiz/reports (using Supabase Edge Functions)
 
-## Can I connect a custom domain to my Lovable project?
+🤝 Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Yes, you can!
+📄 License
+This project is licensed under the MIT License.
+
+🙌 Acknowledgements
+Supabase
+
+Next.js
+
+Tailwind CSS
+
+yaml
+Copy
+Edit
+
 
 <img width="1903" height="960" alt="image" src="https://github.com/user-attachments/assets/4d419d80-3032-46c0-b9fb-af98cf7f9b56" />
 
