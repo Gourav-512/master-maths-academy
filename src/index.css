@@ -2,39 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Master Maths Academy Design System - Modern Education Theme */
 
 @layer base {
   :root {
+    /* Core Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 220 25% 15%;
 
+    /* Card & Surface Colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 25% 15%;
+    --card-hover: 215 25% 97%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Brand - Educational Blue */
+    --primary: 214 84% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 214 84% 70%;
+    --primary-dark: 214 84% 40%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Energetic Orange */
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 25 95% 65%;
+    --secondary-dark: 25 95% 45%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Neutral Tones */
+    --muted: 215 20% 96%;
+    --muted-foreground: 220 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 215 25% 95%;
+    --accent-foreground: 220 25% 15%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 20% 90%;
+    --input: 215 20% 94%;
+    --ring: 214 84% 56%;
+
+    /* Brand Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 84% 56%), hsl(214 84% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 95% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 84% 56%) 0%, hsl(25 95% 53%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(215 25% 98%) 100%);
+
+    /* Shadows & Effects */
+    --shadow-card: 0 4px 20px hsl(214 84% 56% / 0.1);
+    --shadow-card-hover: 0 8px 30px hsl(214 84% 56% / 0.15);
+    --shadow-button: 0 4px 15px hsl(25 95% 53% / 0.3);
+    --shadow-glow: 0 0 30px hsl(214 84% 56% / 0.3);
+
+    /* Animation Timings */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-fast: all 0.2s ease-out;
 
     --radius: 0.5rem;
 
@@ -100,6 +125,111 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    scroll-behavior: smooth;
   }
+}
+
+@layer components {
+  /* Animation Classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+  
+  /* Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-secondary to-secondary-light text-secondary-foreground px-8 py-4 rounded-xl font-semibold text-lg shadow-[var(--shadow-button)] transition-[var(--transition-bounce)] hover:scale-105 hover:shadow-[var(--shadow-glow)] active:scale-95;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-light text-primary-foreground px-6 py-3 rounded-lg font-medium shadow-[var(--shadow-card)] transition-[var(--transition-smooth)] hover:scale-105 hover:shadow-[var(--shadow-card-hover)];
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium transition-[var(--transition-smooth)] hover:bg-primary hover:text-primary-foreground hover:scale-105;
+  }
+  
+  /* Card Variants */
+  .card-hover {
+    @apply bg-gradient-to-br from-card to-muted rounded-xl shadow-[var(--shadow-card)] transition-[var(--transition-smooth)] hover:shadow-[var(--shadow-card-hover)] hover:scale-105 hover:-translate-y-2;
+  }
+  
+  .card-feature {
+    @apply bg-gradient-to-br from-card to-accent p-6 rounded-xl shadow-[var(--shadow-card)] transition-[var(--transition-bounce)] hover:shadow-[var(--shadow-card-hover)] hover:scale-105;
+  }
+  
+  /* Text Gradients */
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-secondary {
+    @apply bg-gradient-to-r from-secondary to-secondary-light bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-hero {
+    @apply bg-gradient-to-r from-primary via-secondary to-primary-light bg-clip-text text-transparent;
+  }
+  
+  /* Floating Background Elements */
+  .floating-element {
+    @apply absolute opacity-10 pointer-events-none;
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .transform-gpu {
+    transform: translateZ(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--secondary) / 0.5); }
+  50% { box-shadow: 0 0 40px hsl(var(--secondary) / 0.8); }
+}
+
+@keyframes slide-up {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
