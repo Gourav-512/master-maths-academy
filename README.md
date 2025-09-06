@@ -1,122 +1,121 @@
-# 📚 Coaching Classes Portal  
+# 📚 Master Maths Academy Coaching Portal
 
-A modern, responsive Coaching/ Tuition Classes web portal built with **Next.js (or React/Vite)** and **Supabase** as backend.  
-This project provides student login, parent access, attendance tracking, fee management, and more.  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Built with TypeScript](https://img.shields.io/badge/TypeScript-95%25-blue)](https://www.typescriptlang.org/)
+[![CSS](https://img.shields.io/badge/CSS-3.2%25-blueviolet)](https://developer.mozilla.org/docs/Web/CSS)
+[![Powered by Supabase](https://img.shields.io/badge/Backend-Supabase-3FCF8E)](https://supabase.com/)
+
+> 🚧 **UNDER DEVELOPMENT: Open to contributors! Help make this platform available for everyone.**
+
+> ✨ **"A modern AI-powered portal for coaching classes with student, parent, and admin features."**
+
+Master Maths Academy is a responsive, full-featured web portal for coaching/tuition classes. Built with **Next.js/TypeScript** and **Supabase**, it provides seamless student management, attendance, fee tracking, notifications, and more.
 
 ---
 
 ## 🚀 Features
 
-- 🔐 **Authentication (Supabase Auth)**
-  - Email + OTP login
-  - Google / GitHub login
-  - Secure Row Level Policies
-
-- 👨‍🎓 **Student Dashboard**
-  - View profile
-  - Attendance records
-  - Exam results
-
-- 🧑‍🏫 **Admin/Teacher Dashboard**
-  - Add/update students
-  - Manage attendance
-  - Upload exam results
-  - Send notifications
-
-- 💳 **Payments (Optional)**
-  - Online fee collection (Stripe/Razorpay integration)
-
-- 📩 **Email Notifications**
-  - OTP login emails
-  - Class updates and reminders
-
-- ⚡ **Supabase Edge Functions**
-  - AI endpoints (future scope)
-  - Scheduled tasks (auto reminders)
+- **Authentication:** Email + OTP, Google, GitHub (Supabase Auth)
+- **Student Dashboard:** Profile, attendance, exam results
+- **Parent Portal:** (Optional) Monitor student progress
+- **Admin/Teacher Panel:** Add/update students, manage attendance, upload results, send notifications
+- **Online Payments:** Stripe/Razorpay integration (optional)
+- **Email Notifications:** OTP, reminders, updates
+- **Supabase Edge Functions:** AI endpoints, scheduled tasks (future scope)
+- **Secure by Design:** Row Level Security (RLS), short-lived OTPs
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** Next.js / React / Vite + TailwindCSS  
-- **Backend:** Supabase (PostgreSQL, Auth, Edge Functions)  
-- **Database:** Supabase PostgreSQL  
-- **Hosting:** Vercel / Netlify  
+- **Frontend:** Next.js, TypeScript, Tailwind CSS
+- **Backend:** Supabase (PostgreSQL, Auth, Edge Functions)
+- **Database:** Supabase PostgreSQL
+- **Hosting:** Vercel / Netlify
 
 ---
 
-## 📂 Project Setup
+## 🚦 Getting Started
 
-### 1️⃣ Clone Repository
+### 1. Clone the Repository
+
 ```bash
-git clone https://github.com/your-username/coaching-classes-portal.git
-cd coaching-classes-portal
-2️⃣ Install Dependencies
-bash
-Copy
-Edit
+git clone https://github.com/Gourav-512/master-maths-academy.git
+cd master-maths-academy
+```
+
+### 2. Install Dependencies
+
+```bash
 npm install
 # or
 yarn install
-3️⃣ Configure Environment Variables
-Create a .env.local file in the root folder and add:
+```
 
-env
-Copy
-Edit
+### 3. Configure Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```env
 NEXT_PUBLIC_SUPABASE_URL=your-project-url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-4️⃣ Run Development Server
-bash
-Copy
-Edit
+```
+
+### 4. Start the Development Server
+
+```bash
 npm run dev
 # or
 yarn dev
-App will be running at: http://localhost:3000
+```
 
-🔐 Security Notes
-✅ OTP expiry set to 5 minutes (300 seconds) for better security
+Visit: [http://localhost:3000](http://localhost:3000)
 
-✅ Row Level Security (RLS) enabled for user-specific data
+---
 
-✅ Environment variables kept secret (.env.local not pushed to GitHub)
+## 🖼️ Screenshots
 
-📸 Screenshots
-(Add your app screenshots here → login page, dashboard, etc.)
+_Add demo screenshots here (login, dashboard, etc.)_
 
-📌 Roadmap
- Authentication (Email OTP + Google login)
+---
 
- Student dashboard
+## 🗺️ Roadmap
 
- Admin panel
+- [x] Email OTP & Google login
+- [x] Student dashboard
+- [x] Admin panel
+- [ ] Fee payment integration
+- [ ] AI-powered quiz/reports (Edge Functions)
+- [ ] Parent portal
+- [ ] More features coming soon
 
- Fee payment integration
+---
 
- AI-powered quiz/reports (using Supabase Edge Functions)
+## 🤝 Contributing
 
-🤝 Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+**This project is under active development and open to everyone!**
 
-📄 License
-This project is licensed under the MIT License.
+Pull requests are welcome! For major changes, open an issue first to discuss your ideas. Let's build a great education platform together.
 
-🙌 Acknowledgements
-Supabase
+---
 
-Next.js
+## 📄 License
 
-Tailwind CSS
+This project is licensed under the [MIT License](LICENSE).
 
-yaml
-Copy
-Edit
+---
 
+## 🙏 Acknowledgements
 
-<img width="1903" height="960" alt="image" src="https://github.com/user-attachments/assets/4d419d80-3032-46c0-b9fb-af98cf7f9b56" />
+- [Supabase](https://supabase.com/)
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- Free and public AI APIs
 
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🌐 Custom Domain Setup
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Go to **Project > Settings > Domains** in your hosting provider and connect your custom domain.
+
+More: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
